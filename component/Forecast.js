@@ -6,8 +6,10 @@ export default function Forecast(props){
         <View>
             <Text>{props.main}</Text>
             <Text>{props.description}</Text>
-            <Text>{props.temp}</Text>
-            <Text>°C</Text>
+            <Text>{props.temp} °C</Text>
+            <Text>{props.pressure} Pa</Text>
+            
         </View>
     )
 }
+//timezone thailand= 25,200 sec by UTC std time/3600 = UTC +7 

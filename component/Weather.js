@@ -7,7 +7,10 @@ export default function Weather(props){
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
-        temp: 0
+        temp: 0,
+        pressure: 0,
+        timezone: 0,
+        country: 0
     })
     
     useEffect(() => {
@@ -19,7 +22,10 @@ export default function Weather(props){
                 setForecastInfo({
                     main: json.weather[0].main,
                     description: json.weather[0].description,
-                    temp: json.main.temp
+                    temp: json.main.temp,
+                    pressure: json.main.pressure,
+                    timezone: json.timezone,
+                    country: json.sys.country
                 });
             })
             .catch((error) => {

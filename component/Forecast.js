@@ -8,7 +8,8 @@ export default function Forecast(props){
             <Text>{props.description}</Text>
             <Text>{props.temp} °C</Text>
             <Text>{props.pressure} Pa</Text>
-            
+            <Text>UTC + {(props.timezone)/3600}</Text>
+            <Text>{props.country}</Text>
         </View>
     )
 }

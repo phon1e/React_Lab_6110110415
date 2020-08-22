@@ -1,7 +1,7 @@
-import { FlatList, View, Text, StyleSheet} from 'react-native'
-import 'react-native-gesture-handler';
-import * as React from 'react';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import React from 'react'
+import { FlatList, View, Text, StyleSheet, ImageBackground, Button } from 'react-native'
+import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 const availableZipItems = [
@@ -17,8 +17,8 @@ const ZipItem = ({place, code, navigation}) => (
         navigation.navigate('Weather',{zipCode: code})
     }}>
         <View style = {styles.ZipItem}>
-            <Text>{place}</Text>
-            <Text>{code}</Text>
+            <Text style={{color: 'yellow'}}>City Name: {place}</Text>
+            <Text style={{color: 'yellow'}}>Zip Code: {code}</Text>
         </View>
     </TouchableHighlight>
 )
@@ -26,11 +26,19 @@ const ZipItem = ({place, code, navigation}) => (
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
     return(
-        <FlatList
-            data = {availableZipItems}
-            ketExtractor = {item => item.code}
-            renderItem =  {({item}) => <ZipItem {...item} navigation={navigation}/>}
-        />
+        
+        <ImageBackground source={require('../home.jpg')} style= {styles.backdrop}>
+            <View>  
+                <FlatList
+                    data = {availableZipItems}
+                    ketExtractor = {item => item.code}
+                    renderItem =  {({item}) => <ZipItem {...item} navigation={navigation}/>}
+                />
+                <StatusBar style="auto" />
+                <Button color="orange" title="BACK" onPress={() => navigation.navigate('Home')} />
+            </View>
+        </ImageBackground>
+        
     )
 }
 
@@ -45,5 +53,11 @@ const styles = StyleSheet.create({
     },
     zipCode:{
         flex: 1
+    },
+    backdrop: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%',
     }
 })

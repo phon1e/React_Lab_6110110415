@@ -41,7 +41,7 @@ export default function Weather(props){
         <ImageBackground source={require('../weather.jpg')} style= {styles.backdrop}>
             <View style={styles.container}>
                 <Text style={styles.innerText}>Zip Code </Text>
-                <Text>{props.zipCode}</Text>
+                <Text style={styles.innerText}>{props.zipCode}</Text>
                 <Forecast {...forecastInfo}/>
             </View>
             <Button color="black" title="BACK" 

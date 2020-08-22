@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Text, ImageBackground, StyleSheet } from 'react-native'
+import { Text, ImageBackground, StyleSheet, View, Button } from 'react-native'
 import Forecast from './Forecast'
+import { useNavigation } from '@react-navigation/native';
 
 export default function Weather(props){
-
+    const navigation = useNavigation()
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
@@ -38,9 +39,13 @@ export default function Weather(props){
 
     return(
         <ImageBackground source={require('../weather.jpg')} style= {styles.backdrop}>
-            <Text >Zip Code </Text>
-            <Text>{props.zipCode}</Text>
-            <Forecast {...forecastInfo}/>
+            <View>
+                <Text >Zip Code </Text>
+                <Text>{props.zipCode}</Text>
+                <Forecast {...forecastInfo}/>
+            </View>
+            <Button color="orange" title="Go back                                              " 
+            onPress={() => navigation.navigate('Zip')} />
         </ImageBackground>
         
     )

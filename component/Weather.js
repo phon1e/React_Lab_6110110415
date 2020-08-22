@@ -39,12 +39,12 @@ export default function Weather(props){
 
     return(
         <ImageBackground source={require('../weather.jpg')} style= {styles.backdrop}>
-            <View>
-                <Text >Zip Code </Text>
+            <View style={styles.container}>
+                <Text style={styles.innerText}>Zip Code </Text>
                 <Text>{props.zipCode}</Text>
                 <Forecast {...forecastInfo}/>
             </View>
-            <Button color="orange" title="Go back                                              " 
+            <Button color="black" title="BACK" 
             onPress={() => navigation.navigate('Zip')} />
         </ImageBackground>
         
@@ -54,10 +54,28 @@ export default function Weather(props){
 const styles = StyleSheet.create({
     backdrop: {
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
         width: '100%',
         height: '100%',
+    },
+    innerText: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: 23,
+        paddingBottom: 15,
+        textShadowOffset: {width: 2,height: 2},
+        textShadowRadius: 10,
+        textShadowColor:'black'
+    },
+    container: { 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        width: '100%', 
+        height: '50%', 
+        opacity: 0.5, 
+        backgroundColor: '#012',
     }
 
     

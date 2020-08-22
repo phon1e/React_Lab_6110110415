@@ -46,17 +46,25 @@ const styles = StyleSheet.create({
     ZipItem: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingTop: 10,
+        paddingBottom: 35,
+
     },
     zipPlace:{
         flex:1
     },
     zipCode:{
-        flex: 1
+        fontSize: 18,
+        paddingLeft:25,
+        color: 'white',
+        textShadowOffset: {width: 2,height: 2},
+        textShadowRadius: 10,
+        textShadowColor:'black'
     },
     backdrop: {
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         width: '100%',
         height: '100%',
     }

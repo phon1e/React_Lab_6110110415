@@ -6,7 +6,7 @@ export default function Forecast(props){
     return(
         <View>
             <Text  style={styles.innerText}>Weather: {props.main}</Text>
-            <Text  style={styles.innerText}>description: {props.description}</Text>
+            <Text  style={styles.innerText}>description: {props.description} .</Text>
             <Text  style={styles.innerText}>Temp: {props.temp} °C</Text>
             <Text  style={styles.innerText}>Pressure: {props.pressure} Pa</Text>
             <Text  style={styles.innerText}>UTC + {(props.timezone)/3600}</Text>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     innerText: {
         color: 'yellow',
         textAlign: 'center',
-        fontSize: 23,
+        fontSize: 25,
         paddingBottom: 15,
         textShadowOffset: {width: 2,height: 2},
         textShadowRadius: 10,

@@ -18,7 +18,7 @@ export default function App() {
         <Stack.Screen name ="Home" component={HomeScreen}/>
         <Stack.Screen name ="Zip" component={ZipCodeScreen}/>
         <Stack.Screen name ="Weather" component={WeatherScreen}/>
-        {/* <AppIntroSlider renderItem={ZipItem} data={availableZipItems} onDone={() => navigation.navigate('Home')} />*/}
+        { <AppIntroSlider renderItem={ZipItem} data={availableZipItems} onDone={() => navigation.navigate('Home')} />}
       </Stack.Navigator>
     </NavigationContainer>
   );
